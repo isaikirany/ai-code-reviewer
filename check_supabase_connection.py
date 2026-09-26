@@ -17,4 +17,4 @@ if not supabase_url or not supabase_key:
 supabase = create_client(supabase_url,supabase_key)
 print("supabase_url",repr(supabase_url))
 result = supabase.table('rag_content').select("id").limit(1).execute()
-print("succeded",result.data)
+print("supabase connection Succeeded. Rows returned:", result.data)
