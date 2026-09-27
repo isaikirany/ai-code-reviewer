@@ -1,0 +1,4 @@
+openai
+PyGithub
+supabase
+python-dotenv
