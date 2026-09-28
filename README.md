@@ -44,8 +44,8 @@ Use Python 3.13 to match the workflow. You need a GitHub repository and PR,
 an OpenAI API key with API access and billing, and a Supabase project.
 
 ```bash
-git clone https://github.com/isaikirany/ai-code-reviwer.git
-cd ai-code-reviwer
+git clone https://github.com/isaikirany/ai-code-reviewer.git
+cd ai-code-reviewer
 python3.13 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -119,6 +119,10 @@ then ranks matches by cosine distance. It returns at most three records, with no
 minimum similarity threshold. It does not check PR dates or merge status. A file
 rename does not retrieve history stored under its former path. The old tutorial
 function `match_documents_by_document_type` is not used by this implementation.
+
+Repository renames also change the stored repository identifier. Reviews saved
+under an old name are not retrieved under the new name unless their IDs and
+document IDs are migrated. Existing history is not migrated automatically.
 
 ## Run a review
 
